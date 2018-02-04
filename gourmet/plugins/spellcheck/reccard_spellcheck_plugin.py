@@ -1,4 +1,4 @@
-import gtk, gtkspell
+import gtk, gtkspellcheck
 
 from gourmet.plugin import RecEditorPlugin, UIPlugin
 
@@ -14,7 +14,7 @@ class SpellPlugin (RecEditorPlugin, UIPlugin):
         for module in self.pluggable.modules:
             tvs = harvest_textviews(module.main)
             for tv in tvs:
-                gtkspell.Spell(tv)
+                gtkspellcheck.Spell(tv)
 
 def harvest_textviews (widget):
     if isinstance(widget,gtk.TextView):
